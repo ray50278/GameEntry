@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>GAME</title>
+  <style>
+    /* =========================================================
+       遊戲外框頁：用 iframe 載入遊戲，並把遊戲區限制在設計比例內。
+       Cocos 的 SHOW_ALL 在視窗比設計比例寬（或高）時，
+       會把設計區外的內容也畫出來；限制 iframe 比例後就不會露出。
+       ========================================================= */
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #frame {
+      display: block;
+      border: 0;
+      background: #000;
+      /* 預設直式 720x1280，實際比例由下方 script 依 games.json 設定 */
+      --ratio: calc(720 / 1280);
+      width: min(100vw, 100dvh * var(--ratio));
+      height: 100dvh;
+    }
+    /* 橫式遊戲：限制高度 */
+    #frame.landscape {
+      width: 100vw;
+      height: min(100dvh, 100vw / var(--ratio));
+    }
+    .msg {
+      color: #9a86c4;
+      font: 14px/1.8 "Noto Sans TC", "PingFang TC", sans-serif;
+      text-align: center;
+      padding: 24px;
+    }
+    .msg a { color: #27f3ff; }
+  </style>
+</head>
+<body>
+  <script>
+    (function () {
+      "use strict";
+
+      function showError(text) {
+        var box = document.createElement("div");
+        box.className = "msg";
+        box.textContent = text;
+        box.appendChild(document.createElement("br"));
+        var back = document.createElement("a");
+        back.href = "./index.html";
+        back.textContent = "回到遊戲選單";
+        box.appendChild(back);
+        document.body.appendChild(box);
+      }
+
+      // design 欄位格式 "720x1280"；沒填就依 orientation 判斷
+      function parseDesign(game) {
+        var m = /^(\d+)\s*[x:×*]\s*(\d+)$/i.exec(String(game.design || ""));
+        if (m) return { w: +m[1], h: +m[2] };
+        return game.orientation === "landscape" ? { w: 1280, h: 720 } : { w: 720, h: 1280 };
+      }
+
+      var gameName = new URLSearchParams(location.search).get("game");
+      if (!gameName) {
+        showError("網址缺少遊戲名稱（?game=）。");
+        return;
+      }
+
+      // 遊戲路徑：有填 path 就優先使用，否則自動用 ./gameList/{gameName}/
+      function gamePath(game) {
+        if (game.path) return game.path;
+        return "./gameList/" + encodeURIComponent(gameName) + "/";
+      }
+
+      // 實際要檢查的入口檔：路徑是資料夾就補上 index.html
+      function entryUrl(game) {
+        var path = gamePath(game);
+        if (/\.html?(\?.*)?$/i.test(path)) return path;
+        return path.replace(/\/?$/, "/") + "index.html";
+      }
+
+      // 檢查遊戲專案是否存在
+      function projectExists(game) {
+        var url = entryUrl(game);
+        return fetch(url, { method: "HEAD", cache: "no-store" })
+          .then(function (res) {
+            if (res.status === 405 || res.status === 501) {
+              return fetch(url, { cache: "no-store" }).then(function (r) { return r.ok; });
+            }
+            return res.ok;
+          })
+          .catch(function () { return false; });
+      }
+
+      fetch("./games.json", { cache: "no-store" })
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          var game = (data.games || []).filter(function (g) {
+            return g && g.gameName === gameName && g.enabled !== false;
+          })[0];
+          if (!game) {
+            showError("games.json 裡找不到遊戲：" + gameName);
+            return;
+          }
+          return projectExists(game).then(function (ok) {
+            if (!ok) {
+              showError("找不到遊戲專案：" + entryUrl(game));
+              return;
+            }
+            openGame(game);
+          });
+        })
+        .catch(function (err) {
+          showError("讀取 games.json 失敗：" + err.message);
+        });
+
+      function openGame(game) {
+          document.title = game.name || game.gameName;
+
+          var size = parseDesign(game);
+          var frame = document.createElement("iframe");
+          frame.id = "frame";
+          frame.title = game.name || game.gameName;
+          frame.setAttribute("allow", "autoplay; fullscreen");
+          frame.setAttribute("allowfullscreen", "");
+          frame.style.setProperty("--ratio", size.w / size.h);
+          if (size.w > size.h) frame.classList.add("landscape");
+          // 資料夾路徑結尾補上 /，避免遊戲內的相對路徑讀錯資料夾
+          var src = gamePath(game);
+          if (!/\.html?(\?.*)?$/i.test(src)) src = src.replace(/\/?$/, "/");
+          frame.src = src;
+          frame.addEventListener("load", function () { frame.focus(); });
+          document.body.appendChild(frame);
+      }
+    })();
+  </script>
+</body>
+</html>

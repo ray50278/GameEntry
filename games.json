@@ -1,0 +1,25 @@
+{
+  "title": "GAME CENTER",
+  "subtitle": "SELECT YOUR GAME",
+  "games": [
+    {
+      "gameName": "7up7down",
+      "id": "game_01",
+      "name": "7Up7Down",
+
+      "tag": "TABLE",
+      "orientation": "portrait",
+      "design": "720x1280",
+      "enabled": true
+    },
+    {
+      "gameName": "FortuneGems",
+      "id": "game_02",
+      "name": "FortuneGems",
+
+      "tag": "SLOT",
+      "orientation": "portrait",
+      "enabled": true
+    }
+  ]
+}
