@@ -1,0 +1,34 @@
+
+win_bg.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+big/Effects_Textures_52-1
+  rotate: false
+  xy: 383, 2
+  size: 80, 80
+  orig: 115, 115
+  offset: 18, 17
+  index: -1
+big/dot_00000
+  rotate: true
+  xy: 659, 82
+  size: 275, 250
+  orig: 450, 450
+  offset: 91, 101
+  index: -1
+big/glow_02
+  rotate: false
+  xy: 383, 84
+  size: 274, 273
+  orig: 450, 450
+  offset: 89, 85
+  index: -1
+big/glow_03
+  rotate: false
+  xy: 2, 4
+  size: 379, 353
+  orig: 450, 450
+  offset: 38, 37
+  index: -1

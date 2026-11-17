@@ -1,0 +1,20 @@
+
+sym_multiply.png
+size: 247,247
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+pic/ex_ss_glow
+  rotate: false
+  xy: 2, 2
+  size: 111, 111
+  orig: 128, 128
+  offset: 9, 8
+  index: -1
+pic/ex_ss_shine
+  rotate: false
+  xy: 2, 115
+  size: 120, 130
+  orig: 200, 200
+  offset: 41, 35
+  index: -1

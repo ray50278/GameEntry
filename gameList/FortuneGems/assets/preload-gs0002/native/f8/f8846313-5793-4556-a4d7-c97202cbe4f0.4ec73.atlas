@@ -1,0 +1,62 @@
+
+gem_r.png
+size: 364,364
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_1
+  rotate: false
+  xy: 130, 138
+  size: 156, 126
+  orig: 240, 240
+  offset: 42, 57
+  index: -1
+bg_2
+  rotate: false
+  xy: 2, 10
+  size: 156, 126
+  orig: 240, 240
+  offset: 42, 57
+  index: -1
+g_1
+  rotate: false
+  xy: 2, 147
+  size: 126, 125
+  orig: 240, 240
+  offset: 56, 58
+  index: -1
+g_2
+  rotate: false
+  xy: 164, 266
+  size: 96, 96
+  orig: 240, 240
+  offset: 72, 72
+  index: -1
+g_3
+  rotate: true
+  xy: 160, 2
+  size: 134, 135
+  orig: 240, 240
+  offset: 53, 53
+  index: -1
+g_4
+  rotate: false
+  xy: 2, 346
+  size: 27, 16
+  orig: 240, 240
+  offset: 106, 148
+  index: -1
+s_1
+  rotate: false
+  xy: 74, 274
+  size: 88, 88
+  orig: 240, 240
+  offset: 76, 76
+  index: -1
+star_1
+  rotate: true
+  xy: 31, 322
+  size: 40, 41
+  orig: 240, 240
+  offset: 100, 105
+  index: -1

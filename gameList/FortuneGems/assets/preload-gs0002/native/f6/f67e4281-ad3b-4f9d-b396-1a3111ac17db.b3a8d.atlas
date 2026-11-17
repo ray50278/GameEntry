@@ -1,0 +1,41 @@
+
+sym_l3.png
+size: 264,264
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_1
+  rotate: false
+  xy: 2, 136
+  size: 156, 126
+  orig: 240, 240
+  offset: 42, 57
+  index: -1
+g_1
+  rotate: false
+  xy: 160, 160
+  size: 102, 102
+  orig: 240, 240
+  offset: 79, 67
+  index: -1
+g_2
+  rotate: false
+  xy: 160, 56
+  size: 102, 102
+  orig: 240, 240
+  offset: 78, 66
+  index: -1
+s_1
+  rotate: true
+  xy: 2, 43
+  size: 91, 92
+  orig: 240, 240
+  offset: 85, 70
+  index: -1
+star_1
+  rotate: true
+  xy: 96, 94
+  size: 40, 41
+  orig: 240, 240
+  offset: 100, 105
+  index: -1

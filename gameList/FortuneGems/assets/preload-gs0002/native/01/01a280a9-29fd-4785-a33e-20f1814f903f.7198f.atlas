@@ -1,0 +1,97 @@
+
+win_all.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+big/big
+  rotate: false
+  xy: 2, 66
+  size: 216, 116
+  orig: 450, 450
+  offset: 117, 202
+  index: -1
+big/bir
+  rotate: false
+  xy: 553, 2
+  size: 179, 161
+  orig: 747, 270
+  offset: 13, 38
+  index: -1
+big/bir_add
+  rotate: false
+  xy: 734, 2
+  size: 181, 161
+  orig: 747, 270
+  offset: 11, 39
+  index: -1
+big/star_00000
+  rotate: false
+  xy: 2, 286
+  size: 81, 76
+  orig: 450, 450
+  offset: 185, 185
+  index: -1
+big/win
+  rotate: false
+  xy: 415, 275
+  size: 194, 87
+  orig: 450, 450
+  offset: 128, 130
+  index: -1
+mega/mega
+  rotate: false
+  xy: 220, 45
+  size: 331, 118
+  orig: 360, 360
+  offset: 15, 157
+  index: -1
+mega/win
+  rotate: false
+  xy: 611, 275
+  size: 193, 87
+  orig: 360, 360
+  offset: 84, 86
+  index: -1
+num_bg
+  rotate: false
+  xy: 2, 184
+  size: 518, 89
+  orig: 648, 1152
+  offset: 65, 446
+  index: -1
+super/super
+  rotate: false
+  xy: 522, 165
+  size: 380, 107
+  orig: 432, 432
+  offset: 27, 204
+  index: -1
+super/win
+  rotate: false
+  xy: 806, 274
+  size: 195, 88
+  orig: 360, 360
+  offset: 83, 84
+  index: -1
+www_big
+  rotate: false
+  xy: 321, 277
+  size: 92, 85
+  orig: 270, 270
+  offset: 87, 91
+  index: -1
+www_mega
+  rotate: false
+  xy: 85, 283
+  size: 108, 79
+  orig: 270, 270
+  offset: 81, 93
+  index: -1
+www_super
+  rotate: false
+  xy: 195, 282
+  size: 124, 80
+  orig: 270, 270
+  offset: 74, 93
+  index: -1

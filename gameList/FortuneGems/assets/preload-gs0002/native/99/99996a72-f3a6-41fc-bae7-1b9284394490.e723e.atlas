@@ -1,0 +1,55 @@
+
+gem_g.png
+size: 259,259
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_1
+  rotate: false
+  xy: 2, 131
+  size: 156, 126
+  orig: 240, 240
+  offset: 42, 57
+  index: -1
+g_1
+  rotate: true
+  xy: 2, 18
+  size: 111, 102
+  orig: 240, 240
+  offset: 65, 69
+  index: -1
+g_2
+  rotate: false
+  xy: 160, 78
+  size: 80, 69
+  orig: 240, 240
+  offset: 80, 85
+  index: -1
+g_3
+  rotate: true
+  xy: 160, 149
+  size: 108, 96
+  orig: 240, 240
+  offset: 66, 72
+  index: -1
+g_4
+  rotate: true
+  xy: 242, 107
+  size: 40, 15
+  orig: 240, 240
+  offset: 100, 139
+  index: -1
+s_1
+  rotate: false
+  xy: 106, 9
+  size: 78, 67
+  orig: 240, 240
+  offset: 81, 86
+  index: -1
+star_1
+  rotate: true
+  xy: 106, 89
+  size: 40, 41
+  orig: 240, 240
+  offset: 100, 105
+  index: -1

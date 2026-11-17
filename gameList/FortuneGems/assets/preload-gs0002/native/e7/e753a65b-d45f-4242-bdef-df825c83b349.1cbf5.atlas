@@ -1,0 +1,41 @@
+
+sym_l1.png
+size: 249,249
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_1
+  rotate: false
+  xy: 2, 121
+  size: 156, 126
+  orig: 240, 240
+  offset: 42, 57
+  index: -1
+g_1
+  rotate: false
+  xy: 160, 39
+  size: 85, 102
+  orig: 240, 240
+  offset: 82, 70
+  index: -1
+g_2
+  rotate: false
+  xy: 160, 143
+  size: 87, 104
+  orig: 240, 240
+  offset: 80, 67
+  index: -1
+s_1
+  rotate: true
+  xy: 2, 44
+  size: 75, 93
+  orig: 240, 240
+  offset: 87, 73
+  index: -1
+star_1
+  rotate: false
+  xy: 97, 78
+  size: 40, 41
+  orig: 240, 240
+  offset: 100, 105
+  index: -1
